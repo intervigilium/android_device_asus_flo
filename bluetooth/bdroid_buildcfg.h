@@ -17,6 +17,8 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
+#define BLUETOOTH_QCOM_SW TRUE
+
 #define BTM_DEF_LOCAL_NAME   "Nexus 7"
 
 // Networking, Capturing, Object Transfer

@@ -24,7 +24,7 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := krait
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
-TARGET_NO_BOOTLOADER := false
+TARGET_NO_BOOTLOADER := true
 
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -32,6 +32,9 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=flo user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += vmalloc=340M
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
+
+TARGET_KERNEL_SOURCE := kernel/google/msm
+TARGET_KERNEL_CONFIG := cyanogen_flo_defconfig
 
 BOARD_USES_ALSA_AUDIO:= true
 BOARD_USES_LEGACY_ALSA_AUDIO:= false
@@ -67,7 +70,7 @@ PRESENT_TIME_OFFSET_FROM_VSYNC_NS := 3200000
 TARGET_USES_ION := true
 TARGET_USES_OVERLAY := true
 TARGET_USES_SF_BYPASS := true
-TARGET_USES_C2D_COMPOSITON := true
+# TARGET_USES_C2D_COMPOSITON := true
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
@@ -104,6 +107,7 @@ BOARD_PERSISTIMAGE_PARTITION_SIZE := 5242880
 
 TARGET_USES_POST_PROCESSING := true
 TARGET_CUSTOM_DISPLAY_TUNING := true
+TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
@@ -148,3 +152,5 @@ USE_MINIKIN := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
+
+-include vendor/asus/flo/BoardConfigVendor.mk
