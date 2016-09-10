@@ -34,8 +34,10 @@ endif
 # currently contain all of the bitmaps at xhdpi density so
 # we do this little trick to fall back to the hdpi version
 # if the xhdpi doesn't exist.
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+#PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_PREBUILT_DPI := xhdpi
 
 PRODUCT_PACKAGES := \
     libwpa_client \
@@ -302,7 +304,12 @@ PRODUCT_COPY_FILES += \
     device/asus/flo/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/asus/flo/nfc/libnfc-brcm-20791b05.conf:system/etc/libnfc-brcm-20791b05.conf
 
-PRODUCT_LOCALES := en_US es_US de_DE zh_CN
+#PRODUCT_LOCALES := en_US es_US de_DE zh_CN
+
+# CM N compatibility
+PRODUCT_PACKAGES += \
+    libstlport \
+    Snap
 
 $(call inherit-product, frameworks/native/build/tablet-7in-xhdpi-2048-dalvik-heap.mk)
-$(call inherit-product, hardware/qcom/msm8960/msm8960.mk)
+#$(call inherit-product, hardware/qcom/msm8960/msm8960.mk)

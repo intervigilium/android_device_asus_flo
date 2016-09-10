@@ -124,4 +124,8 @@ USE_MINIKIN := true
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
 
+# N proprietary binary compatibility
+TARGET_NEEDS_GCC_LIBC := true
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+
 -include vendor/asus/flo/BoardConfigVendor.mk
