@@ -308,6 +308,7 @@ PRODUCT_COPY_FILES += \
 
 # CM N compatibility
 PRODUCT_PACKAGES += \
+    libshim_wvm \
     libstlport \
     Snap
 
