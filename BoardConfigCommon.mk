@@ -128,4 +128,7 @@ EXTENDED_FONT_FOOTPRINT := true
 TARGET_NEEDS_GCC_LIBC := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
+# Media compat
+BOARD_GLOBAL_CFLAGS += -DQCOM_BSP_LEGACY
+
 -include vendor/asus/flo/BoardConfigVendor.mk
